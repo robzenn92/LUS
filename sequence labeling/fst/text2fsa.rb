@@ -1,10 +1,10 @@
 
-@lexer_path = "lex.lex";
+@lexer_path = "token.list";
 
 def is_in_train(word)
 	f = File.open(@lexer_path, "r");
 	f.each_line do |line|
-		if (line.split(' ')[0] == word)
+		if (line == word + "\n")
 			return true
 		end
 	end

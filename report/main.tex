@@ -1,8 +1,9 @@
-\documentclass[a4paper,8pt,oneside]{book}
+\documentclass[a4paper,8pt,oneside]{article}
 
 % \usepackage{minted}
 % \usepackage{titlesec}
-% \usepackage{tikz}
+\usepackage{tikz}
+\usepackage{pgfplots}
 % \usepackage{url}
 
 % \titleformat{\section}{\normalfont\fontsize{10}{10}\bfseries}{\thesection}{1em}{}
@@ -23,16 +24,51 @@
 
 \input{title_page}
 
-\frontmatter
 \tableofcontents
+\newpage
 
-\mainmatter
+\section{Outline}
+
+The report is structured as follows. Section describes ...
+Section 2 describes how I used the \textit{FST} and \textit{GRM} tools for training and testing sequence labeling and it shows the results of applying these tools. Section 3 describes the same as section 2 but using the \textit{CRF++} tool.
+Section 4 shows how text classification is made using \textit{Naive Bayes}.
+The last section states the results and the conclusion of the conducted work.
 
 \section{Data Analysis}
 
+The given data set is composed as follows. Table 1 shows more details about the given files.
+
+\begin{table}[h!]
+	\vspace{0.2cm}
+	\renewcommand*\arraystretch{1.5}
+	\begin{center}
+	\begin{tabular}{|l|l|l|l|}
+		\hline
+		File name & Used for & Word count & Token count \\ \hline
+
+		NLSPARQL.test.feats.txt	& FST & 0 & 0 \\ \hline
+		NLSPARQL.train.feats.txt & FST & 0 & 0 \\ \hline
+		
+		NLSPARQL.test.data	& CFF++ & 0 & 0 \\ \hline
+		NLSPARQL.train.data	& CFF++ & 0 & 0 \\ \hline
+		
+		NLSPARQL.train.tok	& Naive Bayes & 0 & 0 \\ \hline
+		NLSPARQL.train.utt.labels.txt & Naive Bayes & 0 & 0 \\ \hline
+		NLSPARQL.test.tok	& Naive Bayes & 0 & 0 \\ \hline
+		NLSPARQL.test.utt.labels.txt & Naive Bayes & 0 & 0 \\ \hline
+		
+	\end{tabular}
+	\vspace{0.2cm}
+	\caption{Details of the dataset.}
+	\label{table:dataset_details}
+	\end{center}
+\end{table}
+
+
+
 \section{Evaluation}
 
-\section{Comparison of different}
+\section{Sequence Labeling in CRF++}
 
 \section{Feature sets}
 

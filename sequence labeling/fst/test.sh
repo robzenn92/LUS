@@ -1,42 +1,39 @@
 
 i=0
-
-rm tag_sentences_tagged.txt
+rm -f tag_sentences_tagged.txt
+lines=$(wc -l < word_sentences_per_line.txt)
 
 while read line
 do
 	i="$((i+1))"
-	echo $line
+
+	# PROGRESS BAR:
+	# Testing: [#######		] 70%
+	# ---------------------------
+	VAR=$((i))*10/$((lines))
+	printf '\rTesting: [';
+	for p in {1..10}
+	do
+	   	if [ "$((p))" -le "$((VAR))" ]; then
+        	printf '##';
+        fi
+	done
+	printf ']'
+	# ---------------------------
 
 	ruby text2fsa.rb -p "$line" > in.txt
 	fstcompile --isymbols=lex.lex --osymbols=lex.lex in.txt > in.fst
 
 	# It tests the language model with the input string
 	fstcompose in.fst out.fst | fstcompose - pos.lm | fstrmepsilon | fstshortestpath > final.fst
-
-	# echo "fstprint --isymbols=lex.lex --osymbols=lex.lex final.fst\n"
-	# fstprint --isymbols=lex.lex --osymbols=lex.lex final.fst | sort
-	# # fstdraw --isymbols=lex.lex --osymbols=lex.lex --portrait=true --width=10 final.fst| dot -Tjpg > final.jpg
-	# echo "-----\n"
-
-	# | sed 's/^ *$/#/g' | tr "\n" " "  | tr "#" "\n"
-	# | sed 's/^ *$/#/g' | tr "\n" " "  | tr "#" "\n"
-	# echo "$line" >> tag_sentences_tagged.txt
-	# fstprint --isymbols=lex.lex --osymbols=lex.lex final.fst | sort -r | cut -f 4 >> tag_sentences_tagged.txt
-
-	fstprint --isymbols=lex.lex --osymbols=lex.lex --fst_align final.fst | sort -r | cut -f 4 | sed 's/^ *$/#/g' | tr "\n" " "  | tr "#" "\n"
-	# fstdraw --isymbols=lex.lex --osymbols=lex.lex --portrait=true --width=10 final.fst| dot -Tjpg > final.jpg
-
-	# fstprint --isymbols=lex.lex --osymbols=lex.lex final.fst | cut -f 4 >> tag_sentences_tagged.txt
-	# fstprint --isymbols=lex.lex --osymbols=lex.lex final.fst | sort -r | cut -f 4 >> tag_sentences_tagged_sorted.txt
-
-	# fstdraw --isymbols=lex.lex --osymbols=lex.lex --portrait=true --width=10 final.fst| dot -Tjpg > final.jpg
-	# fstprint --isymbols=lex.lex --osymbols=lex.lex final.fst | sort -r | cut -f 4 | sed 's/^ *$/#/g' | tr "\n" " "  | tr "#" "\n"
-
-	# echo "cat outputttone.txt:\n"
-	# cat outputttone.txt
-	# echo "-----\n"
+	fstprint --isymbols=lex.lex --osymbols=lex.lex --fst_align final.fst | sort -r -g | cut -f 4 >> tag_sentences_tagged.txt
 
 done < word_sentences_per_line.txt
+echo "\n"
+echo "$i sentences tested."
 
-echo "$i sentences has been tested."
+# Wrap up results..
+paste word_sentences.txt tag_sentences_expected.txt tag_sentences_tagged.txt | sed '/^ *$/d' | tr "\t" "#" | sed 's/##//g' | sed 's/#/_T-/g' | tr "_" "\t" > result.txt
+
+# Evaluation
+perl conlleval.pl -d "\t" < result.txt

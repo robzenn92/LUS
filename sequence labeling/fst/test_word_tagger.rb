@@ -12,11 +12,6 @@ def read_file()
 
 		puts parse_input line
 
-		# words = line.split(' ')
-		# words.each do |word|
-		# 	o.puts word
-		# end
-		# o.puts "";
 	end
 	o.close
 	w.close
