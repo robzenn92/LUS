@@ -10,8 +10,8 @@ There repo is structured as follows:
 │   ├──crf
 │   │   ├── Source code for Conditional Random Fields
 │   ├──fst
-│   │   Source code for Finite State Transducer
-└── text\ classification
+│   │   ├── Source code for Finite State Transducer
+└── text classification
 	├── Source code for the text classification part using Naive Bayes
 ```
 
