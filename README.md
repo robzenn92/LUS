@@ -30,6 +30,7 @@ Below commands train and test a LM based on trigrams
 
 # CRF++
 
+Default template based both on unigrams and bigrams.
 Only one template has been stored in its folder. However, varius templates has been tested and results can be found in the report.
 
 - sh clean.sh [optional]
