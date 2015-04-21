@@ -4,13 +4,13 @@
 There repo is structured as follows:
 
 ```
-report
+├───report
 │   ├── Folder that contains the latex source code for the report
 ├── sequence\ labeling
-│   ├── crf
-│ 	│ 	 ├── Source code for Conditional Random Fields
-│   └── fst
-│ 		 ├── Source code for Finite State Transducer
+│   ├──crf
+│   │   ├── Source code for Conditional Random Fields
+│   ├──fst
+│   │   Source code for Finite State Transducer
 └── text\ classification
 	├── Source code for the text classification part using Naive Bayes
 ```
