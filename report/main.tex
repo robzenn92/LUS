@@ -19,49 +19,15 @@
 
 \begin{document}
 
-% GOOD Report that includes:
-% Data Analysis
-% Evaluation
-% Comparison of different:
-% Feature Sets
-% Tool Configurations
-
 \input{title_page}
-
-% \tableofcontents
 
 \newgeometry{top=32mm,bottom=32mm,left=32mm,right=32mm}
 
 \chapter{Introduction and Data Analysis}
 
-The report is structured as follows. In this chapter a data analysis of the given dataset is done. Chapter 2 describes how I used the \textit{FST} and \textit{GRM} tools for training and testing sequence labeling based on POS-Tagging. In addition, it shows the results of applying these tools with different Language Model (LM) parameters. As Chapter 2, Chapter 3 describes sequence labeling and results but using the \textit{CRF++} tool instead. Chapter 4 shows how text classification is made using \textit{Na\"{\i}ve Bayes}. The last section states the results and the conclusion of the conducted work.
+The report is structured as follows. In this chapter a data analysis of the given dataset is done. Chapter 2 describes how I used the \textit{FST} and \textit{GRM} tools for training and testing sequence labeling based on POS-Tagging. In addition, it shows the results of applying these tools with different Language Model (LM) parameters. Chapter 3 describes as Chapter 2 sequence labeling and results but using the \textit{CRF++} tool instead. Chapter 4 shows how text classification is made using \textit{Na\"{\i}ve Bayes}. The last section states the results and the conclusion of the conducted work.
 
-The given data set is composed as follows.
-
-\begin{table}[h!]
-\small
-	\begin{center}
-	\begin{tabular}{|l|l|l|l|}
-		\hline
-		File name & Used for & Word count & Token count \\ \hline
-
-		NLSPARQL.test.feats.txt	& FST & 0 & 0 \\ \hline
-		NLSPARQL.train.feats.txt & FST & 0 & 0 \\ \hline
-		
-		NLSPARQL.test.data	& CFF++ & 7117 & 0 \\ \hline
-		NLSPARQL.train.data	& CFF++ & 0 & 0 \\ \hline
-		
-		NLSPARQL.train.tok	& Naive Bayes & 0 & 0 \\ \hline
-		NLSPARQL.train.utt.labels.txt & Naive Bayes & 0 & 0 \\ \hline
-		NLSPARQL.test.tok	& Naive Bayes & 0 & 0 \\ \hline
-		NLSPARQL.test.utt.labels.txt & Naive Bayes & 0 & 0 \\ \hline
-		
-	\end{tabular}
-	\caption{Test results with FST.}
-	\label{table:fst_results}
-	\end{center}
-\end{table}
-
+The given data set is composed in train and test files. The train files are usually bigger than the test files. More precisely, the train file used in the sequence labeling with FST have 21453 tokens and 3337 sentences. Both the train and the set files contain lemmas which are tokens that might be used in order to work with a grammar less complex (e.g different verb forms are treated as the same). For the sequence labeling in CRF, the train set is composed by 21453 words and 3338 phrases. For the text classification part the train set is composed by 3338 sentences while the test set is composed by 1084. Figure \label{fig:crf_dataset} shows train and test set for the sequence labeling in CRF.
 
 \begin{figure}[h!]
   \centering
@@ -134,6 +100,7 @@ As conclusion, I think that training the LM using trigrams rather than complex n
 
 I used Conditional Random Fields (CRFs) for the sequence labeling starting from training a LM based on the train file\footnote{NLSPARQL.train.data} written in IOB notation. I trained the LM using various template definition, however only four templates which gave me better results are written in Table \ref{table:crf_templates}.
 
+\noindent
 These templates differ one each other for relevant reasons: the first two use only unigrams while the others use both unigrams and bigrams. Template A is the simplest one, its window has size 5 while Template B's window has size 7. Template C is defined as 7 unigrams and 3 bigrams while template D is the most complicated one, because it is made of 5 unigrams and 4 bigrams.
 
 \begin{table}[!htb]
@@ -225,7 +192,9 @@ Regarding tool parameters, I trained the LM with different levels of \textit{cut
 	\end{center}
 \end{table}
 
-As can be seen in Figure \ref{fig:crf_exp_num_features}, there is an exponential increase of the number of feaures with respect to the level of precision. As a consequence, to the best of my knowledge it is often more convenient to use simple models as the one defined by the Template C.
+\newpage
+\noindent
+As can be seen in Figure \ref{fig:crf_exp_num_features}, there is an exponential increase of the number of feaures with respect to the level of precision.
 
 \begin{figure}[h]
   \centering
@@ -234,10 +203,12 @@ As can be seen in Figure \ref{fig:crf_exp_num_features}, there is an exponential
     \label{fig:crf_exp_num_features}
 \end{figure}
 
+\noindent
+As a consequence, to the best of my knowledge it is often more convenient to use simple models as the one defined by the Template C.
+
 \chapter{Text classification with Na\"{\i}ve Bayes}
 
-The goal of the text classification part is to predict labels starting from sentences. I trained a Na\"{\i}ve Bayes LM starting from..
-
+The goal of the text classification part is to predict labels starting from sentences. I trained a Na\"{\i}ve Bayes LM  based on Maximum Likelihood hypothesis. I tried the same LM starting first starting from the initial dataset and then replacing words by lemmas.
 
 Both the train\footnote{NLSPARQL.train.tok} and the test\footnote{NLSPARQL.test.tok} dataset has been modified before starting to train the LM. In fact, in both files multiple labels occur for some sentences. As a consequence, bad situations might occur as follows.
 \begin{enumerate}
@@ -269,12 +240,17 @@ The test results written in Table \ref{table:bayes_results_max_like} refear to a
 	\end{center}
 \end{table}
 
+\noindent
+I first trained and then tested the same model using lemmas, so replacing words by lemmas but I got lower scores.
+
 \chap{Conclusion}
 
 This report has described the first project of the Language Understanding Systems course. It is focused on sequence labeling and text classification of a dataset which refers to the movie domain. The sequence labeling part has been computed in two ways using respectively two different tools: the first one was based on Finite State Transducers (FST) while the second one was based on Conditional Random Fields (CRF++). The text classification part has been done using Na\"{\i}ve Bayes with Maximum Likelihood. Different train techniques has been experimented and test results for each of these has been reported.
-
+\noindent
 As result of the sequence labeling with FST, the high score I got is 94.13\% of accuracy and 92.87\% of precision. To reach these values I used a LM trained without lemmas and with a maximum n-gram order count equal to 4.
-
+\noindent
 With CRF++ the highest score I reached is 94.34\% of accuracy and 86.13\% of precision (Template D). However, these values came with 12974573 features, which is very high respect to 8804873 features which allowd me to reach 94.28\% of accuracy and 84.79\% of precision (Template C).
+\noindent
+In the text classification part, using based on Maximum Likelihood hypothesis I got 72.14\% both on accuracy and precision.
 
 \end{document}

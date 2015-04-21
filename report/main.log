@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.1.24)  21 APR 2015 22:58
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.1.24)  21 APR 2015 23:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -610,7 +610,7 @@ LaTeX Warning: Unused global option(s):
 
 (./main.aux
 
-LaTeX Warning: Label `table:fst_results' multiply defined.
+LaTeX Warning: Label `fig:crf_dataset' multiply defined.
 
 )
 \openout1 = `main.aux'.
@@ -777,7 +777,7 @@ Chapter 1.
 File: res/crf_dataset_small.png Graphic file (type png)
 
 <use res/crf_dataset_small.png>
-Package pdftex.def Info: res/crf_dataset_small.png used on input line 68.
+Package pdftex.def Info: res/crf_dataset_small.png used on input line 34.
 (pdftex.def)             Requested size: 240.8994pt x 82.50803pt.
  [1
 
@@ -788,7 +788,7 @@ Chapter 2.
 File: res/fst_train_example.jpg Graphic file (type jpg)
 
 <use res/fst_train_example.jpg>
-Package pdftex.def Info: res/fst_train_example.jpg used on input line 82.
+Package pdftex.def Info: res/fst_train_example.jpg used on input line 48.
 (pdftex.def)             Requested size: 198.33748pt x 27.70299pt.
  [2
 
@@ -798,27 +798,27 @@ File: res/fst_ngram_count_levels_small_rect.png Graphic file (type png)
 
 <use res/fst_ngram_count_levels_small_rect.png>
 Package pdftex.def Info: res/fst_ngram_count_levels_small_rect.png used on inpu
-t line 125.
+t line 91.
 (pdftex.def)             Requested size: 289.07854pt x 148.87544pt.
  [3 <./res/fst_ngram_count_levels_small_rect.png>]
 Chapter 3.
 
-Overfull \hbox (4.45012pt too wide) in paragraph at lines 143--151
+Overfull \hbox (4.45012pt too wide) in paragraph at lines 110--118
  [][] 
  []
 
 
-Overfull \hbox (3.45004pt too wide) in paragraph at lines 156--166
+Overfull \hbox (3.45004pt too wide) in paragraph at lines 123--133
  [][] 
  []
 
 
-Overfull \hbox (5.59953pt too wide) in paragraph at lines 171--185
+Overfull \hbox (5.59953pt too wide) in paragraph at lines 138--152
  [][] 
  []
 
 
-Overfull \hbox (13.90952pt too wide) in paragraph at lines 190--204
+Overfull \hbox (13.90952pt too wide) in paragraph at lines 157--171
  [][] 
  []
 
@@ -828,7 +828,7 @@ Overfull \hbox (13.90952pt too wide) in paragraph at lines 190--204
 File: res/crf_exp_num_features.png Graphic file (type png)
 
 <use res/crf_exp_num_features.png>
-Package pdftex.def Info: res/crf_exp_num_features.png used on input line 232.
+Package pdftex.def Info: res/crf_exp_num_features.png used on input line 201.
 (pdftex.def)             Requested size: 286.18849pt x 171.64082pt.
  [5 <./res/crf_exp_num_features.png>]
 Chapter 4.
@@ -844,7 +844,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  19363 strings out of 493315
  454959 string characters out of 6137904
- 596685 words of memory out of 5000000
+ 595685 words of memory out of 5000000
  22419 multiletter control sequences out of 15000+600000
  11571 words of font info for 42 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -869,7 +869,7 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2013/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2013/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2013/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on main.pdf (8 pages, 407112 bytes).
+Output written on main.pdf (8 pages, 405244 bytes).
 PDF statistics:
  122 PDF objects out of 1000 (max. 8388607)
  84 compressed objects within 1 object stream
