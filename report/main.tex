@@ -236,7 +236,33 @@ As can be seen in Figure \ref{fig:crf_exp_num_features}, there is an exponential
 
 \chapter{Text classification with Na\"{\i}ve Bayes}
 
-The goal of the text classification part is to predict a label for each sentence in the test file\footnote{NLSPARQL.test.tok}. I trained a Na\"{\i}ve Bayes LM starting from 
+The goal of the text classification part is to predict labels starting from sentences. I trained a Na\"{\i}ve Bayes LM starting from..
+
+
+Both the train\footnote{NLSPARQL.train.tok} and the test\footnote{NLSPARQL.test.tok} dataset has been modified before starting to train the LM. In fact, in both files multiple labels occur for some sentences. As a consequence, bad situations might occur as follows.
+\begin{enumerate}
+\item During the training, the probability of having \textbf{multiple labels} for same sentences has to be treated in a differant way.
+\item During the test, the LM predicts only one label for each sentence. So it is necessary to \textbf{check} if the predicted label is in the set of the expected ones.
+\end{enumerate}
+
+\noindent
+In order to solve both the previous problems, I considered sentences that are labelled by more than one label and I used a script which writes each sentence a number of times equal to the number of labels. Afterwards, I calculated the probability which can be expressed by the following expression.
+\[ P(w_i | tag_j) = \frac{C(w_i | tag_j)}{C(w_i)} \]
+
+\begin{table}[h!]
+\small
+	\begin{center}
+	\begin{tabular}{|l|l|l|l|l|}
+		\cline{2-5}
+		\multicolumn{1}{r|}{} & accuracy & precision & recall & FB1 \\ \hline
+		Simple & 72.42\% & 72.42\% & 72.42\% & 72.42 \\ \hline
+	\end{tabular}
+	\caption{Test results with Na\"{\i}ve Bayes.}
+	\label{table:bayes_results}
+	\end{center}
+\end{table}
+
+
 
 \chap{Conclusion}
 
@@ -245,7 +271,5 @@ This report has described the first project of the Language Understanding System
 As result of the sequence labeling with FST, the high score I got is 94.13\% of accuracy and 92.87\% of precision. To reach these values I used a LM trained without lemmas and with a maximum n-gram order count equal to 4.
 
 With CRF++ the highest score I reached is 94.34\% of accuracy and 86.13\% of precision (Template D). However, these values came with 12974573 features, which is very high respect to 8804873 features which allowd me to reach 94.28\% of accuracy and 84.79\% of precision (Template C).
-
-
 
 \end{document}
