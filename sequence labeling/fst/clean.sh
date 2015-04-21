@@ -1,5 +1,5 @@
 # REMOVE GENERATED FILES
-echo "Cleaning.."
+echo "\nCleaning.."
 rm -f comp.far
 rm -f lex.lex
 rm -f out.fst
@@ -19,4 +19,4 @@ rm -f in.txt
 rm -f final.fst
 rm -f tag_sentences_tagged.txt
 rm -f result.txt
-echo "Done."
+echo "Done.\n"

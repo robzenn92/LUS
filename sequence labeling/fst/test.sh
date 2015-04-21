@@ -16,9 +16,14 @@ do
 	do
 	   	if [ "$((p))" -le "$((VAR))" ]; then
         	printf '##';
+        else
+        	printf '  ';
         fi
 	done
-	printf ']'
+	printf '] ';
+	printf $((VAR))0;
+
+	# printf '] ';
 	# ---------------------------
 
 	ruby text2fsa.rb -p "$line" > in.txt

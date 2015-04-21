@@ -6,7 +6,7 @@
 @label_count = "label_count.txt"
 
 @labels = []
-@prob_file_var = []
+@prob_file_var = {}
 @cardinality = []
 
 def set_label(str)
@@ -19,27 +19,21 @@ def set_label(str)
 			predicted_label = label
 		end
 	end
-	puts "HA VINTO " +predicted_label
 	predicted_label
 end
 
 def calc_prob(str, label)
-	puts "calc prob di \"" + str + "\" con label=" + label
 	prob = 1.0;
 	str.split(" ").each do |word|
 		prob *= calc_prob_token(word, label)
 	end
 	prob
-
 end
 
 def calc_prob_token(word, label)
-	@prob_file_var.each do |line|
-		lab, token, prob = line.split("\t")
-		return prob.to_f if(lab == label and token == word)
-	end
-	puts count(label)
-	return 1.0/9999999999; #count(label);
+	return @prob_file_var[label][word] if(@prob_file_var.has_key?(label) and @prob_file_var[label].has_key?(word))
+	return 1.0/9999999999;
+	# return 1.0/count(label);
 end
 
 def count(label)
@@ -71,7 +65,16 @@ end
 def get_prob_file_var
 	i = File.open(@prob_file, 'r');
 	i.each_line do |line|
-		@prob_file_var << line.delete!("\n")
+		lab, token, prob = line.delete!("\n").split("\t")
+		if(!@prob_file_var.has_key?(lab))
+			if(@prob_file_var.length != 0) then
+				@prob_file_var.merge!({ lab => {token => prob.to_f} })
+			else
+				@prob_file_var = { lab => {token => prob.to_f} }
+			end
+		else
+			@prob_file_var["#{lab}"].merge!({token => prob.to_f})
+		end
 	end
 	i.close
 end
@@ -85,18 +88,14 @@ def get_cardinality_labels
 end
 
 def test()
-
 	get_labels
 	sentences = get_sentences
 	get_prob_file_var
 	get_cardinality_labels
 
-	@o = File.open(@test_results, 'w');
 	sentences.each do |sentence|
-		@o.puts set_label(sentence.delete("\n"))
+		puts set_label(sentence.delete("\n"))
 	end
-	@o.close
-
 end
 
 test

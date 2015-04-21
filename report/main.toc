@@ -1,7 +1,4 @@
-\contentsline {section}{\numberline {1}Outline}{2}
-\contentsline {section}{\numberline {2}Data Analysis}{2}
-\contentsline {section}{\numberline {3}Evaluation}{2}
-\contentsline {section}{\numberline {4}Sequence Labeling in CRF++}{2}
-\contentsline {section}{\numberline {5}Feature sets}{2}
-\contentsline {section}{\numberline {6}Tool configuration}{2}
-\contentsline {section}{\numberline {7}Conclusion}{2}
+\contentsline {chapter}{\numberline {1}Introduction and Data Analysis}{2}
+\contentsline {chapter}{\numberline {2}Sequence labeling with FST}{3}
+\contentsline {chapter}{\numberline {3}Sequence labeling with CRF++}{5}
+\contentsline {chapter}{\numberline {4}Text classification with Naive Bayes}{7}

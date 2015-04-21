@@ -1,5 +1,5 @@
-@input = "train_labels_merge.txt";
-@output = "words_labels.txt"
+@input = "train_labels_merge_splitted.txt";
+@output_label = "words_labels.txt"
 
 @words = "word.count"
 @label = "count.all.sorted"
@@ -8,7 +8,7 @@
 
 def setup
 	f = File.open(@input, "r");
-	o = File.open(@output, 'w');
+	o = File.open(@output_label, 'w');
 	f.each_line do |line|
 		sentence, label = line.split("\t");
 		sentence.split(" ").each do |word|
@@ -28,7 +28,7 @@ def count(label)
 	words.close
 end
 
-def bombo
+def cal_prob
 	out = File.open(@output, 'w');
 	labels = File.open(@label, 'r');
 	labels.each_line do |line|
@@ -41,4 +41,4 @@ def bombo
 end
 
 setup
-bombo
+cal_prob

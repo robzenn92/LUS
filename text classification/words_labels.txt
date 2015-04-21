@@ -1064,6 +1064,14 @@ what	actor_name character
 role	actor_name character
 in	actor_name character
 go	actor_name character
+show	actor_name character
+me	actor_name character
+who	actor_name character
+played	actor_name character
+what	actor_name character
+role	actor_name character
+in	actor_name character
+go	actor_name character
 i	actor_name
 cannot	actor_name
 remember	actor_name
@@ -3260,6 +3268,12 @@ movies	director movie_name
 listed	director movie_name
 by	director movie_name
 directors	director movie_name
+show	director movie_name
+me	director movie_name
+movies	director movie_name
+listed	director movie_name
+by	director movie_name
+directors	director movie_name
 director	director
 for	director
 gone	director
@@ -3517,6 +3531,9 @@ director	director
 for	director
 pretty	director
 woman	director
+who	director producer
+made	director producer
+godzilla	director producer
 who	director producer
 made	director producer
 godzilla	director producer
@@ -4994,7 +5011,17 @@ movies	movie date
 by	movie date
 release	movie date
 date	movie date
+find	movie date
+movies	movie date
+by	movie date
+release	movie date
+date	movie date
 show	movie rating
+movie	movie rating
+ratings	movie rating
+show	movie rating
+movie	movie rating
+ratings	movie rating
 movie	movie rating
 ratings	movie rating
 movie	movie rating
@@ -5314,6 +5341,10 @@ gross	movie revenue
 earnings	movie revenue
 for	movie revenue
 movies	movie revenue
+gross	movie revenue
+earnings	movie revenue
+for	movie revenue
+movies	movie revenue
 i	movie
 want	movie
 to	movie
@@ -5486,6 +5517,11 @@ me	movie
 movies	movie
 from	movie
 brazil	movie
+show	movie revenue
+me	movie revenue
+horror	movie revenue
+movie	movie revenue
+earnings	movie revenue
 show	movie revenue
 me	movie revenue
 horror	movie revenue
@@ -5814,6 +5850,13 @@ movies	movie
 funny	movie
 scary	movie
 movies	movie
+movies	movie producer
+by	movie producer
+producer	movie producer
+movies	movie producer
+by	movie producer
+producer	movie producer
+find	movie producer
 movies	movie producer
 by	movie producer
 producer	movie producer
@@ -6436,6 +6479,11 @@ for	movie language
 movies	movie language
 by	movie language
 language	movie language
+search	movie language
+for	movie language
+movies	movie language
+by	movie language
+language	movie language
 mandarin	movie
 movie	movie
 please	movie
@@ -6640,6 +6688,15 @@ are	movie
 made	movie
 by	movie
 dreamworks	movie
+i	movie budget
+'m	movie budget
+looking	movie budget
+for	movie budget
+the	movie budget
+cost	movie budget
+of	movie budget
+some	movie budget
+movies	movie budget
 i	movie budget
 'm	movie budget
 looking	movie budget
@@ -8916,6 +8973,15 @@ about	movie subjects
 the	movie subjects
 movie	movie subjects
 content	movie subjects
+need	movie subjects
+to	movie subjects
+provide	movie subjects
+more	movie subjects
+info	movie subjects
+about	movie subjects
+the	movie subjects
+movie	movie subjects
+content	movie subjects
 was	movie
 what	movie
 tom	movie
@@ -10563,6 +10629,13 @@ ratings	movie rating
 of	movie rating
 action	movie rating
 movies	movie rating
+what	movie rating
+is	movie rating
+the	movie rating
+ratings	movie rating
+of	movie rating
+action	movie rating
+movies	movie rating
 movies	movie
 patrick	movie
 swayze	movie
@@ -11195,6 +11268,17 @@ find	movie director
 director	movie director
 movies	movie director
 find	movie director
+director	movie director
+movies	movie director
+find	movie director
+a	movie director
+list	movie director
+of	movie director
+directors	movie director
+and	movie director
+their	movie director
+movies	movie director
+find	movie director
 a	movie director
 list	movie director
 of	movie director
@@ -11207,6 +11291,16 @@ and	movie director
 who	movie director
 directed	movie director
 them	movie director
+movies	movie director
+and	movie director
+who	movie director
+directed	movie director
+them	movie director
+bring	movie director
+up	movie director
+all	movie director
+director	movie director
+movies	movie director
 bring	movie director
 up	movie director
 all	movie director
@@ -11215,6 +11309,13 @@ movies	movie director
 list	movie director
 director	movie director
 movies	movie director
+list	movie director
+director	movie director
+movies	movie director
+show	movie director
+movies	movie director
+directed	movie director
+by	movie director
 show	movie director
 movies	movie director
 directed	movie director
@@ -13290,6 +13391,9 @@ for	producer
 the	producer
 movie	producer
 hitch	producer
+info	producer producer
+hitch	producer producer
+producer	producer producer
 info	producer producer
 hitch	producer producer
 producer	producer producer
@@ -15807,6 +15911,25 @@ between	movie date
 1995	movie date
 and	movie date
 2000	movie date
+list	movie date
+release	movie date
+dates	movie date
+for	movie date
+all	movie date
+horror	movie date
+movies	movie date
+between	movie date
+1995	movie date
+and	movie date
+2000	movie date
+show	movie revenue
+me	movie revenue
+the	movie revenue
+earnings	movie revenue
+for	movie revenue
+clint	movie revenue
+eastwood	movie revenue
+movies	movie revenue
 show	movie revenue
 me	movie revenue
 the	movie revenue
@@ -20250,6 +20373,16 @@ richard	award_ceremony award_category
 lester	award_ceremony award_category
 's	award_ceremony award_category
 awards	award_ceremony award_category
+show	award_ceremony award_category
+richard	award_ceremony award_category
+lester	award_ceremony award_category
+'s	award_ceremony award_category
+awards	award_ceremony award_category
+what	award_ceremony award_category
+awards	award_ceremony award_category
+has	award_ceremony award_category
+spielberg	award_ceremony award_category
+won	award_ceremony award_category
 what	award_ceremony award_category
 awards	award_ceremony award_category
 has	award_ceremony award_category
@@ -20293,6 +20426,51 @@ directors	director movie date star_rating
 of	director movie date star_rating
 our	director movie date star_rating
 time	director movie date star_rating
+show	director movie date star_rating
+me	director movie date star_rating
+some	director movie date star_rating
+of	director movie date star_rating
+the	director movie date star_rating
+greatest	director movie date star_rating
+film	director movie date star_rating
+directors	director movie date star_rating
+of	director movie date star_rating
+our	director movie date star_rating
+time	director movie date star_rating
+show	director movie date star_rating
+me	director movie date star_rating
+some	director movie date star_rating
+of	director movie date star_rating
+the	director movie date star_rating
+greatest	director movie date star_rating
+film	director movie date star_rating
+directors	director movie date star_rating
+of	director movie date star_rating
+our	director movie date star_rating
+time	director movie date star_rating
+show	director movie date star_rating
+me	director movie date star_rating
+some	director movie date star_rating
+of	director movie date star_rating
+the	director movie date star_rating
+greatest	director movie date star_rating
+film	director movie date star_rating
+directors	director movie date star_rating
+of	director movie date star_rating
+our	director movie date star_rating
+time	director movie date star_rating
+show	director movie star_rating
+me	director movie star_rating
+directors	director movie star_rating
+of	director movie star_rating
+famous	director movie star_rating
+films	director movie star_rating
+show	director movie star_rating
+me	director movie star_rating
+directors	director movie star_rating
+of	director movie star_rating
+famous	director movie star_rating
+films	director movie star_rating
 show	director movie star_rating
 me	director movie star_rating
 directors	director movie star_rating
@@ -20306,8 +20484,46 @@ directors	director movie star_rating
 show	director movie star_rating
 me	director movie star_rating
 famous	director movie star_rating
+directors	director movie star_rating
+show	director movie star_rating
+me	director movie star_rating
+famous	director movie star_rating
+directors	director movie star_rating
+show	director movie star_rating
+me	director movie star_rating
+famous	director movie star_rating
 movie	director movie star_rating
 directors	director movie star_rating
+show	director movie star_rating
+me	director movie star_rating
+famous	director movie star_rating
+movie	director movie star_rating
+directors	director movie star_rating
+show	director movie star_rating
+me	director movie star_rating
+famous	director movie star_rating
+movie	director movie star_rating
+directors	director movie star_rating
+show	director movie star_rating
+me	director movie star_rating
+the	director movie star_rating
+top	director movie star_rating
+hollywood	director movie star_rating
+film	director movie star_rating
+directors	director movie star_rating
+of	director movie star_rating
+all	director movie star_rating
+time	director movie star_rating
+show	director movie star_rating
+me	director movie star_rating
+the	director movie star_rating
+top	director movie star_rating
+hollywood	director movie star_rating
+film	director movie star_rating
+directors	director movie star_rating
+of	director movie star_rating
+all	director movie star_rating
+time	director movie star_rating
 show	director movie star_rating
 me	director movie star_rating
 the	director movie star_rating
@@ -20380,6 +20596,19 @@ videos	movie media
 of	movie media
 spielberg	movie media
 movies	movie media
+show	movie media
+me	movie media
+videos	movie media
+of	movie media
+spielberg	movie media
+movies	movie media
+what	movie star_rating
+are	movie star_rating
+the	movie star_rating
+top	movie star_rating
+five	movie star_rating
+british	movie star_rating
+dramas	movie star_rating
 what	movie star_rating
 are	movie star_rating
 the	movie star_rating
@@ -20395,6 +20624,23 @@ french	movie star_rating
 film	movie star_rating
 to	movie star_rating
 date	movie star_rating
+what	movie star_rating
+is	movie star_rating
+the	movie star_rating
+worst	movie star_rating
+french	movie star_rating
+film	movie star_rating
+to	movie star_rating
+date	movie star_rating
+what	movie star_rating
+is	movie star_rating
+the	movie star_rating
+best	movie star_rating
+french	movie star_rating
+movie	movie star_rating
+of	movie star_rating
+all	movie star_rating
+time	movie star_rating
 what	movie star_rating
 is	movie star_rating
 the	movie star_rating
@@ -20415,6 +20661,23 @@ of	movie star_rating
 all	movie star_rating
 time	movie star_rating
 what	movie star_rating
+are	movie star_rating
+the	movie star_rating
+top	movie star_rating
+ten	movie star_rating
+french	movie star_rating
+movies	movie star_rating
+of	movie star_rating
+all	movie star_rating
+time	movie star_rating
+what	movie star_rating
+top	movie star_rating
+movies	movie star_rating
+are	movie star_rating
+from	movie star_rating
+the	movie star_rating
+uk	movie star_rating
+what	movie star_rating
 top	movie star_rating
 movies	movie star_rating
 are	movie star_rating
@@ -20426,6 +20689,19 @@ hitchcock	movie star_rating
 's	movie star_rating
 best	movie star_rating
 films	movie star_rating
+alfred	movie star_rating
+hitchcock	movie star_rating
+'s	movie star_rating
+best	movie star_rating
+films	movie star_rating
+what	movie star_rating
+is	movie star_rating
+alfred	movie star_rating
+hitchcock	movie star_rating
+'s	movie star_rating
+most	movie star_rating
+famous	movie star_rating
+movie	movie star_rating
 what	movie star_rating
 is	movie star_rating
 alfred	movie star_rating
@@ -20443,6 +20719,20 @@ best	movie star_rating
 movies	movie star_rating
 show	movie star_rating
 me	movie star_rating
+martin	movie star_rating
+scorcese	movie star_rating
+'s	movie star_rating
+best	movie star_rating
+movies	movie star_rating
+show	movie star_rating
+me	movie star_rating
+a	movie star_rating
+popular	movie star_rating
+robert	movie star_rating
+wise	movie star_rating
+movie	movie star_rating
+show	movie star_rating
+me	movie star_rating
 a	movie star_rating
 popular	movie star_rating
 robert	movie star_rating
@@ -20456,6 +20746,22 @@ popular	movie star_rating
 steven	movie star_rating
 spielberg	movie star_rating
 movie	movie star_rating
+what	movie star_rating
+is	movie star_rating
+the	movie star_rating
+most	movie star_rating
+popular	movie star_rating
+steven	movie star_rating
+spielberg	movie star_rating
+movie	movie star_rating
+what	movie star_rating
+are	movie star_rating
+the	movie star_rating
+top	movie star_rating
+rated	movie star_rating
+movies	movie star_rating
+this	movie star_rating
+year	movie star_rating
 what	movie star_rating
 are	movie star_rating
 the	movie star_rating
@@ -20475,6 +20781,25 @@ eleven	movie star_rating
 for	movie star_rating
 warner	movie star_rating
 brothers	movie star_rating
+show	movie star_rating
+me	movie star_rating
+the	movie star_rating
+best	movie star_rating
+films	movie star_rating
+of	movie star_rating
+twenty	movie star_rating
+eleven	movie star_rating
+for	movie star_rating
+warner	movie star_rating
+brothers	movie star_rating
+tell	movie star_rating
+me	movie star_rating
+some	movie star_rating
+of	movie star_rating
+the	movie star_rating
+best	movie star_rating
+nc-17	movie star_rating
+movies	movie star_rating
 tell	movie star_rating
 me	movie star_rating
 some	movie star_rating
@@ -20489,9 +20814,26 @@ sandler	movie star_rating
 best	movie star_rating
 movie	movie star_rating
 list	movie star_rating
+adam	movie star_rating
+sandler	movie star_rating
+'s	movie star_rating
+best	movie star_rating
+movie	movie star_rating
+list	movie star_rating
 brad	movie star_rating
 pitt	movie star_rating
 popular	movie star_rating
+movies	movie star_rating
+brad	movie star_rating
+pitt	movie star_rating
+popular	movie star_rating
+movies	movie star_rating
+give	movie star_rating
+a	movie star_rating
+list	movie star_rating
+of	movie star_rating
+best	movie star_rating
+rated	movie star_rating
 movies	movie star_rating
 give	movie star_rating
 a	movie star_rating
@@ -20509,12 +20851,32 @@ movie	movie trailer
 trailers	movie trailer
 show	movie trailer
 me	movie trailer
+a	movie trailer
+set	movie trailer
+of	movie trailer
+movie	movie trailer
+trailers	movie trailer
+show	movie trailer
+me	movie trailer
+movie	movie trailer
+trailers	movie trailer
+show	movie trailer
+me	movie trailer
 movie	movie trailer
 trailers	movie trailer
 preview	movie trailer
 paramount	movie trailer
 pictures	movie trailer
 clips	movie trailer
+preview	movie trailer
+paramount	movie trailer
+pictures	movie trailer
+clips	movie trailer
+show	movie trailer
+me	movie trailer
+the	movie trailer
+movie	movie trailer
+highlights	movie trailer
 show	movie trailer
 me	movie trailer
 the	movie trailer
@@ -20999,6 +21361,12 @@ pictures	producer picture
 of	producer picture
 movie	producer picture
 producers	producer picture
+show	producer picture
+me	producer picture
+pictures	producer picture
+of	producer picture
+movie	producer picture
+producers	producer picture
 who	producer
 are	producer
 the	producer
@@ -21038,6 +21406,13 @@ about	rating star_rating
 the	rating star_rating
 movie	rating star_rating
 dredd	rating star_rating
+find	rating star_rating
+rating	rating star_rating
+information	rating star_rating
+about	rating star_rating
+the	rating star_rating
+movie	rating star_rating
+dredd	rating star_rating
 what	rating
 is	rating
 it	rating
@@ -21054,6 +21429,16 @@ nemo	review movie
 info	review movie
 and	review movie
 reviews	review movie
+get	review movie
+finding	review movie
+nemo	review movie
+info	review movie
+and	review movie
+reviews	review movie
+parental	review rating
+review	review rating
+for	review rating
+movie	review rating
 parental	review rating
 review	review rating
 for	review rating
