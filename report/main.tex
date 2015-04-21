@@ -246,23 +246,28 @@ Both the train\footnote{NLSPARQL.train.tok} and the test\footnote{NLSPARQL.test.
 \end{enumerate}
 
 \noindent
-In order to solve both the previous problems, I considered sentences that are labelled by more than one label and I used a script which writes each sentence a number of times equal to the number of labels. Afterwards, I calculated the probability which can be expressed by the following expression.
+In order to solve both the previous problems, I considered sentences that are labelled by more than once. I used a script which writes each sentence a number of times equal to the number of labels. Afterwards, I calculated the probability which can be expressed by the following expression.
 \[ P(w_i | tag_j) = \frac{C(w_i | tag_j)}{C(w_i)} \]
+
+\noindent
+Once that the probability script execution is finished, I trained the LM as follows. For each sentence written in the train file, I predict its label usign the Maximum Likelihood hypothesis formulae shown in the followin expression.
+\[ h_{ML} = arg max_{h \in H} P(D|h) \]
+
+\noindent
+The test results written in Table \ref{table:bayes_results_max_like} refear to a test guided on a dataset in which there were no sentences labelled with multiple labels: the LM has been trained and tested with modified version of files as described above.
 
 \begin{table}[h!]
 \small
 	\begin{center}
-	\begin{tabular}{|l|l|l|l|l|}
-		\cline{2-5}
-		\multicolumn{1}{r|}{} & accuracy & precision & recall & FB1 \\ \hline
-		Simple & 72.42\% & 72.42\% & 72.42\% & 72.42 \\ \hline
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		accuracy & precision & recall & FB1 \\ \hline
+		72.14\% & 72.14\% & 72.14\% & 72.14 \\ \hline
 	\end{tabular}
-	\caption{Test results with Na\"{\i}ve Bayes.}
-	\label{table:bayes_results}
+	\caption{Test results with Na\"{\i}ve Bayes using Maximum Likelihood hypothesis.}
+	\label{table:bayes_results_max_like}
 	\end{center}
 \end{table}
-
-
 
 \chap{Conclusion}
 

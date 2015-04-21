@@ -32,8 +32,7 @@ end
 
 def calc_prob_token(word, label)
 	return @prob_file_var[label][word] if(@prob_file_var.has_key?(label) and @prob_file_var[label].has_key?(word))
-	return 1.0/9999999999;
-	# return 1.0/count(label);
+	return 1.0/116130; # train word count
 end
 
 def count(label)

@@ -33,7 +33,12 @@ def cal_prob
 	labels = File.open(@label, 'r');
 	labels.each_line do |line|
 		label, token, count = line.split(" ")
-		prob = (count.to_f / ("%.8f" % count(token)).to_f)
+		puts "LINE: " + line
+		# if(token == nil) then
+			prob = (count.to_f / ("%.8f" % count(token)).to_f)
+		# else
+		# 	prob = 1/99999999
+		# end
 		out.puts "#{label}\t#{token}\t#{prob.to_s}"
 	end
 	out.close
